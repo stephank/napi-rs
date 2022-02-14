@@ -1,0 +1,21 @@
+{
+  "name": "{{ name }}",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "napi": {
+    "name": "{{ binary_name }}",
+    "targets": [
+      {% for target in targets %}"{{ target }}"{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  },
+  "license": "{{ license }}",
+  "engines": {
+    "node": ">={{ min_node_version }}"
+  },
+  "scripts": {
+    "build": "napi build",
+    "preversion": "napi version"
+  }
+}

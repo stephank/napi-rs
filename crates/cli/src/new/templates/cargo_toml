@@ -1,0 +1,19 @@
+[package]
+name = "{{ name }}"
+version = "1.0.0"
+edition = "2021"
+license = "{{ license }}"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "{{ napi_version }}", default-features = false, features = ["napi4"] }
+napi-derive = { version = "{{ napi_derive_version }}", default-features = false, features = ["full"] }
+
+[build-dependencies]
+napi-build = "{{ napi_build_version }}"
+
+[profile.release]
+lto = true

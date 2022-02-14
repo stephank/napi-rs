@@ -1,0 +1,11 @@
+[package]
+name = "napi-cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Yi Liu <forehalo@gmail.com>"]
+description = "A command line interface for Node API Rust bindings"
+
+[dependencies]
+clap = { version = "3", features = ["derive"] }
+dialoguer = "0.10"
+minijinja = "0.13"
